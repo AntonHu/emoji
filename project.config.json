@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "emojiSearch",
+  "projectname": "emoji查找神器",
   "description": "",
-  "appid": "touristappid",
+  "appid": "wx8b142a52594c9b20",
   "setting": {
     "urlCheck": true,
     "es6": false,
