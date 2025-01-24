@@ -1,25 +1,82 @@
+// 定义深色模式变量
+.dark {
+  --vp-c-bg: #1e1e1e; // 背景色
+  --vp-c-text-1: #e0e0e0; // 主要文本颜色
+  --vp-c-text-2: #a0a0a0; // 次要文本颜色
+  --vp-c-divider: #444; // 分隔线颜色
+  --vp-c-bg-soft: #252525; // 柔和背景色
+  --vp-c-bg-alt: #2d2d2d; // 交替背景色
+  --vp-c-brand: #646cff; // 品牌色
+  --vp-c-brand-rgb: 100, 108, 255; // 品牌色 RGB 值
+  --vp-c-white: #ffffff; // 白色
+  --vp-gradient-1: linear-gradient(120deg, #bd34fe, #41d1ff); // 渐变颜色
+}
+
+// 定义浅色模式变量
+.light {
+  --vp-c-bg: #ffffff; // 背景色
+  --vp-c-text-1: #2c3e50; // 主要文本颜色
+  --vp-c-text-2: #666666; // 次要文本颜色
+  --vp-c-divider: #e0e0e0; // 分隔线颜色
+  --vp-c-bg-soft: #f5f5f5; // 柔和背景色
+  --vp-c-bg-alt: #eeeeee; // 交替背景色
+  --vp-c-brand: #646cff; // 品牌色
+  --vp-c-brand-rgb: 100, 108, 255; // 品牌色 RGB 值
+  --vp-c-white: #ffffff; // 白色
+  --vp-gradient-1: linear-gradient(120deg, #bd34fe, #41d1ff); // 渐变颜色
+}
+
+// 定义 CSS 变量
+:root {
+  --vp-c-bg: #1e1e1e; // 背景色
+  --vp-c-text-1: #e0e0e0; // 主要文本颜色
+  --vp-c-text-2: #a0a0a0; // 次要文本颜色
+  --vp-c-divider: #444; // 分隔线颜色
+  --vp-c-bg-soft: #252525; // 柔和背景色
+  --vp-c-bg-alt: #2d2d2d; // 交替背景色
+  --vp-c-brand: #646cff; // 品牌色
+  --vp-c-brand-rgb: 100, 108, 255; // 品牌色 RGB 值
+  --vp-c-white: #ffffff; // 白色
+  --vp-gradient-1: linear-gradient(120deg, #bd34fe, #41d1ff); // 渐变颜色
+}
+
+// 全局样式
+html,
+body {
+  background-color: var(--vp-c-bg); // 设置 html 和 body 背景色为深色
+  margin: 0;
+  padding: 0;
+  height: 100%; // 确保 body 高度占满整个屏幕
+}
+#taro-navigation-bar,
+#app,
+#app > div {
+  background: var(--vp-c-bg) !important;
+}
+
 // 悬浮按钮样式
 .theme-toggle {
   position: fixed;
   bottom: 20px;
-  right: calc((100% - min(100%, 1200px)) / 2 + 20px); // 确保按钮在留白区域内
-  width: 40px;
-  height: 40px;
+  right: calc((100% - min(100%, 1200px)) / 2 + 20px);
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
   border-radius: 50%;
-  background-color: rgba(var(--vp-c-brand-rgb), 0.5); // 更透明的背景
+  background-color: rgba(var(--vp-c-brand-rgb), 0.5);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  color: var(--vp-c-white); // 按钮文字颜色
+  font-size: 24PX;
+  color: var(--vp-c-white);
   transition: background-color 0.3s ease, opacity 0.3s ease;
-  opacity: 0.5; // 默认更透明
+  opacity: 0.5;
 
   &:hover {
-    opacity: 1; // hover 时不透明
-    background-color: rgba(var(--vp-c-brand-rgb), 1); // 不透明背景
+    opacity: 1;
+    background-color: rgba(var(--vp-c-brand-rgb), 1);
   }
 }
 
@@ -79,15 +136,16 @@
   }
 }
 
+// 全局样式
 .container {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background-color: var(--vp-c-bg); // 容器背景色与 body 一致
-  color: var(--vp-c-text-1); // 使用主要文本颜色变量
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
   padding: 20px;
   min-height: 100vh;
-  max-width: 1200px; // 设置页面最大宽度
-  margin: 0 auto; // 让内容居中
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 // 自定义滚动条样式
@@ -110,58 +168,96 @@
   background: var(--vp-c-text-2); // 使用次要文本颜色变量
 }
 
-// 头部样式（纯文字 + 渐变字体颜色）
+// 标题和副标题样式
 .header {
   text-align: center;
   margin-bottom: 30px;
   padding: 20px 0;
 
   .title {
-    font-size: 36px;
+    font-size: 36px; // 默认字号
     font-weight: 700;
     margin: 0;
-    background: var(--vp-gradient-1); // 使用渐变颜色
-    -webkit-background-clip: text; // 文本渐变
-    -webkit-text-fill-color: transparent; // 透明文本
+    background: var(--vp-gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
     display: inline-block;
+
+    // 小程序上放大字号
+    @media (max-width: 768px) {
+      font-size: 90px; // 小程序上放大
+    }
   }
 
   .subtitle {
-    font-size: 18px;
-    color: var(--vp-c-text-2); // 使用次要文本颜色变量
+    font-size: 18px; // 默认字号
+    color: var(--vp-c-text-2);
     margin-top: 10px;
     opacity: 0.8;
+
+    // 小程序上放大字号
+    @media (max-width: 768px) {
+      font-size: 24px; // 小程序上放大
+    }
   }
 }
 
-// 搜索框样式
-.search-box {
+// 搜索栏样式
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
-  padding: 20px;
-  background-color: var(--vp-c-bg-soft); // 使用柔和背景色变量
+  padding: 12px; // 调整内边距
+  background-color: var(--vp-c-bg-soft);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 20; // 确保输入框在最上层
+  z-index: 20;
 
-  .search-input {
-    width: calc(100% - 24px); // 减去 padding 和 border 的宽度
-    padding: 12px;
-    border: 1px solid var(--vp-c-divider); // 使用分隔线颜色变量
+  // 分类选择器样式（移动端）
+  .category-picker {
+    box-sizing: border-box;
+    width: 60PX;
+    padding: 8px 20px;
+    border: 1px solid var(--vp-c-divider);
     border-radius: 8px;
-    font-size: 16px;
-    color: var(--vp-c-text-1); // 使用主要文本颜色变量
+    font-size: 14PX;
+    color: var(--vp-c-text-1);
+    background-color: var(--vp-c-bg-alt);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.3s ease;
+    height: 40PX; // 调整高度
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      border-color: var(--vp-c-brand);
+    }
+  }
+
+  // 输入框样式
+  .search-input {
+    box-sizing: border-box;
+    padding: 8px 12px;
+    width: 100%;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    font-size: 14PX;
+    color: var(--vp-c-text-1);
     outline: none;
     transition: border-color 0.3s ease;
-    box-sizing: border-box; // 确保宽度包含 padding 和 border
-    background-color: var(--vp-c-bg-alt); // 使用交替背景色变量
+    background-color: var(--vp-c-bg-alt);
+    height: 40PX; // 调整高度
+    line-height: 40PX;
 
     &:focus {
-      border-color: var(--vp-c-brand); // 使用品牌色变量
-      box-shadow: 0 0 8px rgba(var(--vp-c-brand-rgb), 0.2); // 使用品牌色 RGB 值
+      border-color: var(--vp-c-brand);
+      box-shadow: 0 0 8px rgba(var(--vp-c-brand-rgb), 0.2);
     }
   }
 }
@@ -171,38 +267,38 @@
   display: flex;
   gap: 20px;
 
-  // 分类列表样式
+  // 分类列表栏样式（宽屏设备）
   .category-list {
-    width: 160px; // 缩小宽度，足够显示 15 个字符
-    background-color: var(--vp-c-bg-soft); // 使用柔和背景色变量
+    width: 160px;
+    background-color: var(--vp-c-bg-soft);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    height: calc(100vh - 200px); // 固定高度
+    height: calc(100vh - 160px); // 调整高度
     position: sticky;
-    top: 100px; // 与搜索栏的距离保持一致
+    top: 80px; // 与搜索栏的距离保持一致
     z-index: 10;
-    overflow: hidden; // 隐藏父容器的滚动条
+    overflow: hidden;
 
     .category-title {
       font-size: 20px;
       font-weight: 600;
-      color: var(--vp-c-text-1); // 使用主要文本颜色变量
+      color: var(--vp-c-text-1);
       margin-bottom: 15px;
       position: sticky;
-      top: 0; // 标题栏固定
-      background-color: var(--vp-c-bg-soft); // 背景色与分类栏一致
-      z-index: 1; // 确保标题栏在最上层
-      padding-bottom: 10px; // 增加间距
+      top: 0;
+      background-color: var(--vp-c-bg-soft);
+      z-index: 1;
+      padding-bottom: 10px;
     }
 
     .categories {
       list-style: none;
       padding: 0;
       margin: 0;
-      height: calc(100% - 50px); // 减去标题栏高度
-      overflow-y: auto; // 独立滚动
-      overflow-x: hidden; // 隐藏横向滚动条
+      height: calc(100% - 50px);
+      overflow-y: auto;
+      overflow-x: hidden;
 
       .category-item {
         padding: 12px;
@@ -210,19 +306,19 @@
         border-radius: 8px;
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.2s ease;
-        color: var(--vp-c-text-2); // 使用次要文本颜色变量
+        color: var(--vp-c-text-2);
         font-size: 16px;
 
         &:hover {
-          background-color: var(--vp-c-bg-alt); // 使用交替背景色变量
+          background-color: var(--vp-c-bg-alt);
           transform: translateX(5px);
         }
 
         &.active {
-          background-color: var(--vp-c-brand); // 使用品牌色变量
-          color: var(--vp-c-white); // 使用白色变量
+          background-color: var(--vp-c-brand);
+          color: var(--vp-c-white);
           font-weight: bold;
-          box-shadow: 0 2px 8px rgba(var(--vp-c-brand-rgb), 0.3); // 使用品牌色 RGB 值
+          box-shadow: 0 2px 8px rgba(var(--vp-c-brand-rgb), 0.3);
         }
       }
     }
@@ -231,54 +327,52 @@
   // Emoji 列表样式
   .emoji-list {
     flex: 1;
-    background-color: var(--vp-c-bg-soft); // 使用柔和背景色变量
+    background-color: var(--vp-c-bg-soft);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    overflow-x: hidden; // 隐藏横向滚动条
+    overflow-x: hidden;
 
     .emoji-title {
       font-size: 20px;
       font-weight: 600;
-      color: var(--vp-c-text-1); // 使用主要文本颜色变量
+      color: var(--vp-c-text-1);
       margin-bottom: 15px;
     }
 
-    // Emoji 列表样式
     .emojis {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); // 每列最小宽度 80px，自动填充
-      gap: 10px; // 项目之间的间距
-      justify-content: center; // 内容居中
-    
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 10px;
+
       .emoji-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; // 内容垂直居中
+        justify-content: center;
         cursor: pointer;
         transition: transform 0.2s ease, opacity 0.2s ease;
         opacity: 0.9;
-        width: 100%; // 宽度占满整个 grid 单元格
-        padding: 8px; // 内边距
-        box-sizing: border-box; // 确保 padding 不影响宽度
-    
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+
         &:hover {
           transform: scale(1.2);
           opacity: 1;
         }
-    
+
         .emoji {
-          font-size: 2rem; // Emoji 大小
+          font-size: 2rem;
         }
-    
+
         .emoji-keywords {
-          font-size: 12px; // keywords 字体大小
-          color: var(--vp-c-text-2); // 使用次要文本颜色
+          font-size: 12px;
+          color: var(--vp-c-text-2);
           text-align: center;
-          margin-top: 4px; // 与 Emoji 的间距
-          opacity: 0.8; // 适当降低透明度
-          word-break: break-word; // 允许 keywords 换行
+          margin-top: 4px;
+          opacity: 0.8;
+          word-break: break-word;
         }
       }
     }
