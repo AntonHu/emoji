@@ -1,5 +1,5 @@
 // 防抖函数
-export const debounce = (func, delay) => {
+export const debounce = (func, delay = 500) => {
   let timer;
   return function (...args) {
     clearTimeout(timer); // 清除之前的定时器
