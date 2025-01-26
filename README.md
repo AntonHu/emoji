@@ -9,7 +9,7 @@
 ### 小程序端
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/c95da3f9-5f69-4a09-9174-a45d8ffad0fc" alt="小程序预览图" width="50%" />
+  <img src="https://github.com/user-attachments/assets/c95da3f9-5f69-4a09-9174-a45d8ffad0fc" alt="小程序预览图" width="70%" />
 </div>
 
 ##### 扫码体验
