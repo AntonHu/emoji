@@ -4,16 +4,12 @@
 
 ### PC Web端
 
-<div style="text-align:center">
-  <img src="https://github.com/user-attachments/assets/19226233-9a1a-44e6-8c59-cd1403a4632b" style="width:49.7%;"/>
-  <img src="https://github.com/user-attachments/assets/cba6f376-fe68-4c1c-b953-0197bc25c947" style="width:49.7%;"/>
-</div>
+![PC预览图](https://github.com/user-attachments/assets/423340fc-3f2c-40b4-be7b-e2749c4f3a72)
 
 ### 小程序端
 
-<div style="text-align:center">
-  <img src="https://github.com/user-attachments/assets/c1814304-dd5f-43b1-9c4f-fefb6349f741" alt="描述" style="width:49.7%;"/>
-  <img src="https://github.com/user-attachments/assets/8762f155-e0d8-4ce7-8ad0-db9c44dac6b3" alt="描述" style="width:49.7%;"/>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c95da3f9-5f69-4a09-9174-a45d8ffad0fc" alt="小程序预览图" width="50%" />
 </div>
 
 ##### 扫码体验
